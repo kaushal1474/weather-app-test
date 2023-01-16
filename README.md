@@ -1,4 +1,6 @@
 # Getting Started with Weather Application
+Weather Application is a free weather web application. It provides weather information like current temperature, clouds, visibility, min/max temp. etc. you can get any city weather information.
+
 
 There are major 2 Routes are there:
 1. Search Page

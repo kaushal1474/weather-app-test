@@ -22,7 +22,8 @@ const CityCard = ({ cityData, setSelectedCity }: ICityCardProps) => {
     const names: string[] = cityData?.currentCity?.name?.split(",") ?? []
     const { favouriteCity, setFavouriteCity } = useContext<IContext>(Context)
 
-    const handleAddToFavorites = () => {
+    const handleAddToFavorites = (e: any) => {
+        e.stopPropagation()
         if (favouriteCity && cityData && favouriteCity[`${cityData.currentCity.value.lat},${cityData.currentCity.value.lon}`]) {
             delete favouriteCity[`${cityData.currentCity.value.lat},${cityData.currentCity.value.lon}`]
             setFavouriteCity({ ...favouriteCity })

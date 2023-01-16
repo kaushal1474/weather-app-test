@@ -98,7 +98,7 @@ const WeatherInfo = ({ cordsInfo }: { cordsInfo: SelectedCity }) => {
                         <div>
                             <div className='img-container'>
                                 <div className='temp'>{((weatherData?.main?.temp || 0) - 273.15).toFixed(2)}°</div>
-                                <img src={`${baseUrl}/img/w/${weatherData?.weather?.[0]?.icon}.png`} alt="current weather" />
+                                {weatherData  && <img src={`${baseUrl}/img/w/${weatherData?.weather?.[0]?.icon}.png`} alt="current weather" />}
                             </div>
                             <div className="description">{weatherData?.weather?.map((desc: any) => desc?.description)?.join(", ")}</div>
                             <div className="min-max-temp">Min temp. of Day: {((weatherData?.main?.temp_min || 0) - 273.15).toFixed(2)}° • Max temp. : {((weatherData?.main?.temp_max || 0) - 273.15).toFixed(2)}°</div>
