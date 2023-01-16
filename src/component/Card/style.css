@@ -1,18 +1,30 @@
-.card {
-    border: 1px solid #6e7176;
-    padding: 10px;
-    border-radius: 5px;
-    width: 200px;
-    box-sizing: border-box;
-    box-shadow: 1px 2px 2px 1px #6e717663;
-}
-
-.header {
+.city-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    column-gap: 10px;
 }
 
-.card .city {
-    margin: 0;
+.MuiCardContent-root .min-max-temp {
+    font-size: 14px;
+}
+
+.MuiCardContent-root .description {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.MuiSvgIcon-root.favorite-city {
+    color: goldenrod;
+}
+
+.MuiPaper-root.city-card {
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 599px) {
+    .MuiPaper-root.city-card {
+        max-width: 100%;
+    }
 }

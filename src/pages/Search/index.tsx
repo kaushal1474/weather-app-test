@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Autocomplete, TextField } from '@mui/material'
 import WeatherInfo from '../../component/InfoPaper';
+import { SelectedCity } from '../../types';
 
-const debounce = (cb: (arg: any[]) => void, d: number) => {
+function debounce<T extends Function>(cb: T, d: number) {
 
   let timer: any;
 
-  return function (...args: any[]) {
+  return function (...args: any) {
     if (timer) clearTimeout(timer)
 
     timer = setTimeout(() => {
-      console.log("is called", d);
-      // @ts-ignore
       cb(...args)
     }, d)
   }
@@ -22,9 +21,9 @@ const secretKey = process.env.REACT_APP_API_KEY
 
 const SearchPage = () => {
 
-  const [latLong, setLatLong] = useState<any>([{ name: '', value: '' }])
-  const [searchCity, setSearchCity] = useState("")
-  const [selectedCity, setSelectedCity] = useState<any>({ name: '', value: { lat: 0, lon: 0 } })
+  const [latLong, setLatLong] = useState<SelectedCity[]>([{ name: '', value: { lat: 0, lon: 0 } }])
+  const [searchCity, setSearchCity] = useState<string>("")
+  const [selectedCity, setSelectedCity] = useState<SelectedCity>({ name: '', value: { lat: 0, lon: 0 } })
 
   useEffect(() => {
     if (searchCity) {
@@ -53,7 +52,7 @@ const SearchPage = () => {
     }
   }, [searchCity])
 
-  const handleChange = (e: any, newInputValue: string) => {
+  const handleChange = (e: any) => {
     debounce(() => {
       setSearchCity(e.target.value)
     }, 800)()

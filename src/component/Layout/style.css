@@ -1,0 +1,33 @@
+.logo {
+    font-family: serif !important;
+    font-size: 2rem !important;
+    cursor: pointer;
+}
+
+.MuiToolbar-root  {
+    flex-wrap: wrap;
+    column-gap: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    font-size: 1rem;
+    padding: 0;
+}
+
+nav ul a {
+    text-decoration: none !important;
+    color: #00000080;
+}
+
+nav ul a:hover {
+    text-decoration: underline !important;
+}
+
+nav ul a.underline {
+    color: black;
+}

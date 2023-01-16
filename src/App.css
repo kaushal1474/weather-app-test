@@ -17,6 +17,7 @@
   justify-content: space-between;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
 }
 
 .weather-card {
@@ -31,6 +32,31 @@
   background-color: #0000008c;
   padding: 10px 16px;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-header .favo-wrapper {
+  color: #ffffff88;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-header svg.MuiSvgIcon-root {
+  color: white;
+}
+
+.card-header svg.MuiSvgIcon-root.favorite-city {
+  color: goldenrod;
+}
+
+
+.no-data {
+  font-size: 26px;
+  color: #00000050;
 }
 
 .card-content {
@@ -45,7 +71,7 @@
   align-items: center;
 }
 
-.img-container img{
+.img-container img {
   background-color: #ffffff73;
 }
 
@@ -79,13 +105,6 @@
   margin-top: 20px;
 }
 
-@media screen and (max-width: 567px) {
-  .addt-info{
-    flex-direction: column;
-    gap: 0;
-  }
-}
-
 .info-container {
   width: 100%;
 }
@@ -104,4 +123,15 @@
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
+}
+
+@media screen and (max-width: 567px) {
+  .addt-info {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .card-header .favo-wrapper span {
+    display: none;
+  }
 }
