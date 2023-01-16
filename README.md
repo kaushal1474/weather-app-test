@@ -1,8 +1,8 @@
 # Getting Started with Weather Application
 
 There are major 2 Routes are there:
-## 1. Search Page
-## 2. Favourite Page
+1. Search Page
+2. Favourite Page
 
 
 ## 1. Search Page
